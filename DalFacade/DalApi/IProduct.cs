@@ -2,6 +2,6 @@
 
 namespace DalApi;
 
-internal interface IProduct: ICrud<DO.Product>
+public interface IProduct: ICrud<DO.Product>
 {
 }

@@ -1,6 +1,6 @@
 ﻿
 namespace DalApi;
 
-internal interface ICustomer: ICrud<DO.Customer>
+public interface ICustomer: ICrud<DO.Customer>
 {
 }

@@ -5,11 +5,11 @@ namespace Dal;
 internal static class DataSource
 {
     /// רשימת כל המוצרים במערכת
-    internal static List<DO.Product?> Products = new();
+    internal static List<DO.Product> Products = new();
     /// רשימת כל הלקוחות במערכת
-    internal static List<DO.Customer?> Customers = new();
+    internal static List<DO.Customer> Customers = new();
     /// רשימת כל המבצעים במערכת
-    internal static List<DO.Sale?> Sales = new();
+    internal static List<DO.Sale> Sales = new();
  
     internal static class Config
     {
