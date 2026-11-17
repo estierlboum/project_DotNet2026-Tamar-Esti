@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DalApi
 {
-    internal interface IDal
+    public interface IDal
     {
         ICustomer Customer { get; }
         IProduct Product { get; }

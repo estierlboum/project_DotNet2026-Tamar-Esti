@@ -17,7 +17,7 @@ namespace Dal
             Sale? saleToDelete = Read(id);
             if (saleToDelete == null)
             {
-                throw new KeyNotFoundException($"Sale with ID {id} not found.");
+                throw new DalDoesNotExistException($"Sale with ID {id} not found.");
             }
             DataSource.Sales.Remove(saleToDelete);
         }
@@ -46,7 +46,7 @@ namespace Dal
 
             if (oldSale == null)
             {
-                throw new KeyNotFoundException($"Sale with ID {item.Id} not found.");
+                throw new DalDoesNotExistException($"Sale with ID {item.Id} not found.");
             }
 
             DataSource.Sales.Remove(oldSale);

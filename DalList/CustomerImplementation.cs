@@ -1,5 +1,5 @@
-﻿using DO;
-using DalApi;
+﻿using DalApi;
+using DO;
 
 namespace Dal
 {
@@ -10,7 +10,7 @@ namespace Dal
             Customer? oldCustomer = Read(item.Id);
             if (oldCustomer != null)
             {
-                throw new InvalidOperationException($"Customer with ID {item.Id} already exists.");
+                throw new DalAlreadyExistsException($"Customer with ID {item.Id} already exists.");
             }
             DataSource.Customers.Add(item);
             return item.Id;
@@ -22,7 +22,7 @@ namespace Dal
             Customer? customerToDelete = Read(id);
             if (customerToDelete == null)
             {
-                throw new KeyNotFoundException($"Customer with ID {id} not found.");
+                throw new DalDoesNotExistException($"Customer with ID {id} not found.");
             }
             DataSource.Customers.Remove(customerToDelete);
         }
@@ -51,7 +51,7 @@ namespace Dal
 
             if (oldCustomer == null)
             {
-                throw new KeyNotFoundException($"Customer with ID {item.Id} not found.");
+                throw new DalDoesNotExistException($"Customer with ID {item.Id} not found.");
             }
 
             DataSource.Customers.Remove(oldCustomer);

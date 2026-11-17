@@ -30,14 +30,14 @@ internal static class DataSource
         // --- הגדרות מספר רץ עבור מבצע (Sale) ---
 
         /// המספר המזהה ההתחלתי (המינימלי) עבור מבצע
-        internal const int _startSaleId = 1;
+        internal const int startSaleId = 1;
 
         /// שדה סטטי השומר את המספר הרץ הבא עבור מבצע
-        private static int _nextSaleId = _startSaleId;
+        private static int nextSaleId = startSaleId;
 
 
         /// מאפיין המחזיר את המספר הרץ הבא עבור מבצע ומקדם אותו אוטומטית ב-1
-        internal static int NextSaleId => _nextSaleId++;
+        internal static int NextSaleId => nextSaleId++;
     }
 }
     

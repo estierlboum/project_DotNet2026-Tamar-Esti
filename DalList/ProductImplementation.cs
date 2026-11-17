@@ -20,7 +20,7 @@ namespace Dal
             Product? productToDelete = Read(id);
             if (productToDelete == null)
             {
-                throw new KeyNotFoundException($"Product with ID {id} not found.");
+                throw new DalDoesNotExistException($"Product with ID {id} not found.");
             }
             DataSource.Products.Remove(productToDelete);
         }
@@ -49,7 +49,7 @@ namespace Dal
 
             if (oldProduct == null)
             {
-                throw new KeyNotFoundException($"Product with ID {item.Id} not found.");
+                throw new DalDoesNotExistException($"Product with ID {item.Id} not found.");
             }
 
             DataSource.Products.Remove(oldProduct);
